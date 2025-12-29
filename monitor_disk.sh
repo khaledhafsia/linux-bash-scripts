@@ -2,7 +2,7 @@
 # monitor_disk.sh
 # Monitors disk usage and alerts if usage exceeds a threshold
 
-THRESHOLD=80
+THRESHOLD=${1:-80}
 PARTITION="/"
 
 USAGE=$(df -h $PARTITION | awk 'NR==2 {print $5}' | sed 's/%//')
